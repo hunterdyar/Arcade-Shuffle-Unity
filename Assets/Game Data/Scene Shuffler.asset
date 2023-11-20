@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aee7590302e41269b7f557bec4c4784, type: 3}
+  m_Name: Scene Shuffler
+  m_EditorClassIdentifier: 
+  GameplaySceneList: {fileID: 11400000, guid: e9e9a354d6a50df46b695b902d9a2229, type: 2}
+  RandomScenePicker: Assets/Scenes/Meta/ChuckALuck.unity
+  GameOverScene: Assets/Scenes/Meta/GameOverScene.unity
+  LoadGameOverAdditive: 1
