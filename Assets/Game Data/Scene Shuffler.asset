@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aee7590302e41269b7f557bec4c4784, type: 3}
   m_Name: Scene Shuffler
   m_EditorClassIdentifier: 
-  GameplaySceneList: {fileID: 11400000, guid: e9e9a354d6a50df46b695b902d9a2229, type: 2}
+  _gameplaySceneList: {fileID: 11400000, guid: e9e9a354d6a50df46b695b902d9a2229, type: 2}
   RandomScenePicker: Assets/Scenes/Meta/ChuckALuck.unity
   GameOverScene: Assets/Scenes/Meta/GameOverScene.unity
   LoadGameOverAdditive: 1
+  LoadRandomPickerAdditive: 1
