@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace ArcadeShuffle.FlappyDog
 {
+    //This game manager is responsible for controlling the game state and the score.
     public class FlappyManager : MonoBehaviour
     {
         [SerializeField] private InputReader _reader;
@@ -35,11 +36,13 @@ namespace ArcadeShuffle.FlappyDog
         {
             _gameHasBegun = true;
             OnStartGame?.Invoke();
+            //unsubscribe isntantly so we don't keep starting the game over and over
             _reader.OnActionPerformed -= StartGame;
         }
 
         private void OnDestroy()
         {
+            //unsubscribe if we haven't yet. This could be OnDisable, but then it can get disabled multiple times without subscribing.
             if (!_gameHasBegun)
             {
                 _reader.OnActionPerformed -= StartGame;
