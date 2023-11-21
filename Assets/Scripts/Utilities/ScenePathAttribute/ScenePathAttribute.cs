@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities.ScenePathAttribute
 {
-	[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Field)]
 	public class ScenePathAttribute : PropertyAttribute
 	{
 		

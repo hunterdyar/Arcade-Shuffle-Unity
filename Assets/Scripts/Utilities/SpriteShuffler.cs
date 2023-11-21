@@ -4,33 +4,38 @@ using Random = UnityEngine.Random;
 
 namespace ArcadeShuffle
 {
+    //It's nice when we write a component intending on it being a multi-use component.... and it actually is!
+    //This component and the frogger obstacle could be the same thing, but it makes sense to have nice little re-usable pieces.
+    //shuffling a list of colors/sprites is likely a common thing to do, and will be nice to re-use.
+    
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteShuffler : MonoBehaviour
     {
         private SpriteRenderer _spriteRenderer;
         
         [Header("Sprite Shuffle")]
-        public InitilizationSettings ShuffleSpriteWhen;
+        public InitializationSettings ShuffleSpriteWhen;
         public bool avoidPreviousSprite;
         public Sprite[] SpriteOptions;
 
         [Header("Color Shuffle")]
-        public InitilizationSettings ChooseRandomColorWhen;
+        public InitializationSettings ChooseRandomColorWhen;
         public bool avoidPreviousColor;
         public Color[] ColorOptions;
         void Awake()
         {
+            //[RequireComponent] enforces the component.
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         void Start()
         {
-            if (ShuffleSpriteWhen == InitilizationSettings.OnStart)
+            if (ShuffleSpriteWhen == InitializationSettings.OnStart)
             {
                 ShuffleSprite();
             }
 
-            if (ChooseRandomColorWhen == InitilizationSettings.OnStart)
+            if (ChooseRandomColorWhen == InitializationSettings.OnStart)
             {
                 NewRandomColor();
             }
@@ -38,12 +43,12 @@ namespace ArcadeShuffle
 
         private void OnEnable()
         {
-            if (ShuffleSpriteWhen == InitilizationSettings.OnEnable)
+            if (ShuffleSpriteWhen == InitializationSettings.OnEnable)
             {
                 ShuffleSprite();
             }
 
-            if (ChooseRandomColorWhen == InitilizationSettings.OnEnable)
+            if (ChooseRandomColorWhen == InitializationSettings.OnEnable)
             {
                 NewRandomColor();
             }
